@@ -17,7 +17,7 @@ class AppTheme {
     fontWeight: FontWeight.w600,
   );
 
-  static const TextStyle bankName = TextStyle(
+  static const TextStyle trigo = TextStyle(
     color: cream,
     fontSize: 38,
     fontFamily: 'Georgia',
