@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import '../widgets/header_panel.dart';
-import '../widgets/form_panel.dart';
+import '../widgets/register_header_panel.dart';
+import '../widgets/register_form_panel.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen>
+class _RegisterScreenState extends State<RegisterScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animController;
   late Animation<double> _fadeAnim;
@@ -47,12 +47,13 @@ class _LoginScreenState extends State<LoginScreen>
       body: SingleChildScrollView(
         child: Column(
           children: [
-            HeaderPanel(),
+            RegisterFormPanel(),
+
             FadeTransition(
               opacity: _fadeAnim,
               child: SlideTransition(
                 position: _slideAnim,
-                child: FormPanel(),
+                child: RegisterHeaderPanel(),
               ),
             ),
           ],

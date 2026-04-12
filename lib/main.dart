@@ -25,7 +25,7 @@ class TriGO extends StatelessWidget {
         fontFamily: 'Georgia',
         scaffoldBackgroundColor: const Color(0xFFF5F0E8),
       ),
-      home: const LoginScreen(),
+      home: LoginScreen(),
     );
   }
 }

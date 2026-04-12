@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
+import '../screens/register_screen.dart';
 import 'continue_button.dart';
+
 
 class FormPanel extends StatefulWidget {
   const FormPanel({super.key});
@@ -8,6 +10,7 @@ class FormPanel extends StatefulWidget {
   @override
   State<FormPanel> createState() => _FormPanelState();
 }
+
 
 class _FormPanelState extends State<FormPanel> {
   final _emailController    = TextEditingController();
@@ -86,6 +89,7 @@ class _FormPanelState extends State<FormPanel> {
                     decorationColor: Color(0x661A1A1A),
                   ),
                 ),
+              
               ),
             ],
           ),
@@ -104,12 +108,18 @@ class _FormPanelState extends State<FormPanel> {
           ),
           const SizedBox(height: 24),
           Center(
+            child: GestureDetector(
+              onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => RegisterScreen()),
+            ),
             child: RichText(
               text: TextSpan(
                 children: [
                   TextSpan(text: "Don't have an account?  ", style: AppTheme.createAccount),
                   TextSpan(text: 'Create one', style: AppTheme.createAccountLink),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -117,7 +127,7 @@ class _FormPanelState extends State<FormPanel> {
       ),
     );
   }
-
+  
   Widget _buildTextField({
     required TextEditingController controller,
     required String hint,

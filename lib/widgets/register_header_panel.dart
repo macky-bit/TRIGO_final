@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 
-class HeaderPanel extends StatelessWidget {
-  const HeaderPanel({super.key});
+class RegisterHeaderPanel extends StatelessWidget {
+  const RegisterHeaderPanel({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class HeaderPanel extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: Color(0x12FFFFFF), // white 7%
+                  color: Color(0x12FFFFFF),
                   width: 36,
                 ),
               ),
@@ -55,13 +55,27 @@ class HeaderPanel extends StatelessWidget {
                 Text('TriGO', style: AppTheme.trigo),
                 const SizedBox(height: 16),
                 Text(
-                  'TriGo is a digital application designed to improve the tricycle transportation system by providing a standardized and transparent fare mechanism while also supporting local tourism.',
-                  style: AppTheme.tagline,
+                  'Begin your journey with us today.',
+                  style: TextStyle(
+                    color: Color(0xCCF5F0E8),
+                    fontSize: 15,
+                    fontFamily: 'Georgia',
+                    fontWeight: FontWeight.w700,
+                    height: 1.4,
+                  ),
                 ),
+                const SizedBox(height: 20),
+                _bulletPoint('Full access to all features from day one, no credit card required.'),
+                const SizedBox(height: 10),
+                _bulletPoint('Your data is encrypted and never shared with third parties.'),
+                const SizedBox(height: 10),
+                _bulletPoint('Cancel or change your plan at any time, hassle-free.'),
+                const SizedBox(height: 10),
+                _bulletPoint('Dedicated support available around the clock.'),
                 const SizedBox(height: 32),
                 Row(
                   children: [
-                    Text('v1.0.0', style: AppTheme.versionTag),
+                    Text('v2.1.0', style: AppTheme.versionTag),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: Text('·', style: AppTheme.versionTag),
@@ -74,6 +88,32 @@ class HeaderPanel extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _bulletPoint(String text) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 5),
+          child: Container(
+            width: 5,
+            height: 5,
+            decoration: BoxDecoration(
+              color: AppTheme.accent,
+              shape: BoxShape.circle,
+            ),
+          ),
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Text(
+            text,
+            style: AppTheme.tagline,
+          ),
+        ),
+      ],
     );
   }
 }
