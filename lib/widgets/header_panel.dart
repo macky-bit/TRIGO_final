@@ -52,10 +52,10 @@ class HeaderPanel extends StatelessWidget {
               children: [
                 Text('PHIL. 2026', style: AppTheme.philLabel),
                 const SizedBox(height: 10),
-                Text('RMBC Bank', style: AppTheme.bankName),
+                Text('TriGO', style: AppTheme.bankName),
                 const SizedBox(height: 16),
                 Text(
-                  'A secure Bank for every\nfilipino citizen. We value\nyour trust and privacy.',
+                  'TriGo is a digital application designed to improve the tricycle transportation system by providing a standardized and transparent fare mechanism while also supporting local tourism.',
                   style: AppTheme.tagline,
                 ),
                 const SizedBox(height: 32),

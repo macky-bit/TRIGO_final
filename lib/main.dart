@@ -10,16 +10,16 @@ void main() {
       statusBarIconBrightness: Brightness.light,
     ),
   );
-  runApp(const TriGo());
+  runApp(const TriGO());
 }
 
-class TriGo extends StatelessWidget {
-  const TriGo({super.key});
+class TriGO extends StatelessWidget {
+  const TriGO({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'TriGo Bank',
+      title: 'TriGO',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Georgia',
