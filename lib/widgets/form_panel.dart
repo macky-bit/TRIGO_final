@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../screens/register_screen.dart';
 import 'continue_button.dart';
-
+import '../screens/dashboard_screen.dart';
 
 class FormPanel extends StatefulWidget {
   const FormPanel({super.key});
@@ -165,7 +165,9 @@ class _FormPanelState extends State<FormPanel> {
   }
 
   void _handleLogin() {
-    debugPrint('Email: ${_emailController.text}');
-    debugPrint('Password: ${_passwordController.text}');
-  }
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (_) => DashboardScreen()),
+  );
+}
 }
