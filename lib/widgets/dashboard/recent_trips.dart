@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 class RecentTrips extends StatelessWidget {
   const RecentTrips({super.key});
 
-  static const Color _cardBg   = Color(0xFF252B3B);
-  static const Color _textMain = Color(0xFFFFFFFF);
-  static const Color _textSub  = Color(0xFFB0B8CC);
-  static const Color _divider  = Color(0xFF2E3548);
+  static const Color _cardBg  = Color(0xFF252525);
+  static const Color _accent  = Color(0xFFB87333);
+  static const Color _cream   = Color(0xFFF5F0E8);
+  static const Color _label   = Color(0xFF888070);
+  static const Color _divider = Color(0xFF2E2A24);
 
   final List<Map<String, String>> _trips = const [
-    {'title': 'Ride to SM Baguio',     'subtitle': 'Today - ₱80.00'},
-    {'title': 'Ride to Burnham Park',  'subtitle': 'Yesterday - ₱70.00'},
+    {'title': 'Ride to SM Baguio',    'subtitle': 'Today - ₱80.00'},
+    {'title': 'Ride to Burnham Park', 'subtitle': 'Yesterday - ₱70.00'},
   ];
 
   @override
@@ -21,7 +22,7 @@ class RecentTrips extends StatelessWidget {
         Text(
           'Recent Trips',
           style: TextStyle(
-            color: _textMain,
+            color: _cream,
             fontSize: 17,
             fontFamily: 'Georgia',
             fontWeight: FontWeight.w700,
@@ -32,6 +33,7 @@ class RecentTrips extends StatelessWidget {
           decoration: BoxDecoration(
             color: _cardBg,
             borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: _divider, width: 1),
           ),
           child: Column(
             children: List.generate(_trips.length, (i) {
@@ -45,6 +47,20 @@ class RecentTrips extends StatelessWidget {
                           horizontal: 16, vertical: 16),
                       child: Row(
                         children: [
+                          Container(
+                            width: 38,
+                            height: 38,
+                            decoration: BoxDecoration(
+                              color: _accent.withValues(alpha: 0.12),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.electric_rickshaw,
+                              color: _accent,
+                              size: 18,
+                            ),
+                          ),
+                          const SizedBox(width: 14),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,40 +68,33 @@ class RecentTrips extends StatelessWidget {
                                 Text(
                                   trip['title']!,
                                   style: TextStyle(
-                                    color: _textMain,
-                                    fontSize: 14,
+                                    color: _cream,
+                                    fontSize: 13,
                                     fontFamily: 'Georgia',
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
-                                const SizedBox(height: 4),
+                                const SizedBox(height: 3),
                                 Text(
                                   trip['subtitle']!,
                                   style: TextStyle(
-                                    color: _textSub,
-                                    fontSize: 12,
+                                    color: _label,
+                                    fontSize: 11,
                                     fontFamily: 'Courier New',
+                                    letterSpacing: 0.5,
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          Icon(
-                            Icons.chevron_right,
-                            color: _textSub,
-                            size: 20,
-                          ),
+                          Icon(Icons.chevron_right, color: _label, size: 18),
                         ],
                       ),
                     ),
                   ),
                   if (i < _trips.length - 1)
-                    Divider(
-                      color: _divider,
-                      height: 1,
-                      indent: 16,
-                      endIndent: 16,
-                    ),
+                    Divider(color: _divider, height: 1,
+                        indent: 16, endIndent: 16),
                 ],
               );
             }),

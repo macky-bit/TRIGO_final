@@ -18,7 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1A1F2E),
+      backgroundColor: const Color(0xFF1A1A1A),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -27,7 +27,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ProfileHeader(),
               const SizedBox(height: 20),
               ProfileInfo(),
-              const SizedBox(height: 20),
+              const SizedBox(height: 16),
               ProfileMenu(),
               const SizedBox(height: 24),
               LogoutButton(),

@@ -21,7 +21,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1A1F2E),
+      backgroundColor: const Color(0xFF1A1A1A),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -47,10 +47,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
       bottomNavigationBar: BottomNav(
         currentIndex: _currentNavIndex,
         onTap: (i) {
+          setState(() => _currentNavIndex = i);
           if (i == 3) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => const ProfileScreen()),
+              MaterialPageRoute(builder: (_) => ProfileScreen()),
             );
           }
         },

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({super.key});
 
-  static const Color _cardBg   = Color(0xFF252B3B);
-  static const Color _textMain = Color(0xFFFFFFFF);
-  static const Color _textSub  = Color(0xFFB0B8CC);
-  static const Color _green    = Color(0xFF4CAF50);
-  static const Color _divider  = Color(0xFF2E3548);
+  static const Color _cardBg  = Color(0xFF252525);
+  static const Color _accent  = Color(0xFFB87333);
+  static const Color _cream   = Color(0xFFF5F0E8);
+  static const Color _label   = Color(0xFF888070);
+  static const Color _divider = Color(0xFF2E2A24);
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +15,7 @@ class ProfileMenu extends StatelessWidget {
       decoration: BoxDecoration(
         color: _cardBg,
         borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: _divider, width: 1),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +25,7 @@ class ProfileMenu extends StatelessWidget {
             child: Text(
               'SETTINGS',
               style: TextStyle(
-                color: _green,
+                color: _accent,
                 fontSize: 10,
                 fontFamily: 'Courier New',
                 letterSpacing: 2.5,
@@ -52,20 +53,20 @@ class ProfileMenu extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         child: Row(
           children: [
-            Icon(icon, color: Color(0xFF4CAF50), size: 20),
+            Icon(icon, color: Color(0xFFB87333), size: 20),
             const SizedBox(width: 14),
             Expanded(
               child: Text(
                 label,
                 style: TextStyle(
-                  color: _textMain,
+                  color: Color(0xFFF5F0E8),
                   fontSize: 13,
                   fontFamily: 'Georgia',
                   fontWeight: FontWeight.w600,
                 ),
               ),
             ),
-            Icon(Icons.chevron_right, color: _textSub, size: 18),
+            Icon(Icons.chevron_right, color: Color(0xFF888070), size: 18),
           ],
         ),
       ),

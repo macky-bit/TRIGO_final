@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class WalletCard extends StatelessWidget {
   const WalletCard({super.key});
 
-  static const Color _cardBg   = Color(0xFF252B3B);
-  static const Color _green    = Color(0xFF4CAF50);
-  static const Color _textMain = Color(0xFFFFFFFF);
-  static const Color _textSub  = Color(0xFFB0B8CC);
+  static const Color _cardBg = Color(0xFF252525);
+  static const Color _accent = Color(0xFFB87333);
+  static const Color _cream  = Color(0xFFF5F0E8);
+  static const Color _label  = Color(0xFF888070);
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +15,7 @@ class WalletCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: _cardBg,
         borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Color(0xFF2E2A24), width: 1),
       ),
       child: Row(
         children: [
@@ -23,20 +24,21 @@ class WalletCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Wallet Balance',
+                  'WALLET BALANCE',
                   style: TextStyle(
-                    color: _textSub,
-                    fontSize: 12,
+                    color: _accent,
+                    fontSize: 10,
                     fontFamily: 'Courier New',
-                    letterSpacing: 1,
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 6),
                 Text(
                   '₱250.00',
                   style: TextStyle(
-                    color: _textMain,
-                    fontSize: 26,
+                    color: _cream,
+                    fontSize: 28,
                     fontFamily: 'Georgia',
                     fontWeight: FontWeight.w700,
                   ),
@@ -49,16 +51,17 @@ class WalletCard extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
               decoration: BoxDecoration(
-                color: _green,
+                color: _accent,
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: const Text(
+              child: Text(
                 'Add Funds',
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 13,
-                  fontFamily: 'Georgia',
+                  color: Color(0xFF1A1A1A),
+                  fontSize: 12,
+                  fontFamily: 'Courier New',
                   fontWeight: FontWeight.w700,
+                  letterSpacing: 1,
                 ),
               ),
             ),

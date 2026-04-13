@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class ProfileInfo extends StatelessWidget {
   const ProfileInfo({super.key});
 
-  static const Color _cardBg   = Color(0xFF252B3B);
-  static const Color _textMain = Color(0xFFFFFFFF);
-  static const Color _textSub  = Color(0xFFB0B8CC);
-  static const Color _green    = Color(0xFF4CAF50);
-  static const Color _divider  = Color(0xFF2E3548);
+  static const Color _cardBg  = Color(0xFF252525);
+  static const Color _accent  = Color(0xFFB87333);
+  static const Color _cream   = Color(0xFFF5F0E8);
+  static const Color _label   = Color(0xFF888070);
+  static const Color _divider = Color(0xFF2E2A24);
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +15,7 @@ class ProfileInfo extends StatelessWidget {
       decoration: BoxDecoration(
         color: _cardBg,
         borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: _divider, width: 1),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +25,7 @@ class ProfileInfo extends StatelessWidget {
             child: Text(
               'PERSONAL INFO',
               style: TextStyle(
-                color: _green,
+                color: _accent,
                 fontSize: 10,
                 fontFamily: 'Courier New',
                 letterSpacing: 2.5,
@@ -33,11 +34,11 @@ class ProfileInfo extends StatelessWidget {
             ),
           ),
           Divider(color: _divider, height: 1),
-          _infoRow(Icons.phone_outlined,      'Phone',    '+63 912 345 6789'),
+          _infoRow(Icons.phone_outlined,       'PHONE',    '+63 912 345 6789'),
           Divider(color: _divider, height: 1, indent: 16, endIndent: 16),
-          _infoRow(Icons.location_on_outlined, 'Address', 'Baguio City, Benguet'),
+          _infoRow(Icons.location_on_outlined, 'ADDRESS',  'Baguio City, Benguet'),
           Divider(color: _divider, height: 1, indent: 16, endIndent: 16),
-          _infoRow(Icons.cake_outlined,        'Birthday', 'January 1, 1995'),
+          _infoRow(Icons.cake_outlined,        'BIRTHDAY', 'January 1, 1995'),
         ],
       ),
     );
@@ -48,7 +49,7 @@ class ProfileInfo extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       child: Row(
         children: [
-          Icon(icon, color: Color(0xFF4CAF50), size: 20),
+          Icon(icon, color: Color(0xFFB87333), size: 20),
           const SizedBox(width: 14),
           Expanded(
             child: Column(
@@ -57,17 +58,17 @@ class ProfileInfo extends StatelessWidget {
                 Text(
                   label,
                   style: TextStyle(
-                    color: _textSub,
-                    fontSize: 10,
+                    color: Color(0xFF888070),
+                    fontSize: 9,
                     fontFamily: 'Courier New',
-                    letterSpacing: 1.5,
+                    letterSpacing: 2,
                   ),
                 ),
-                const SizedBox(height: 2),
+                const SizedBox(height: 3),
                 Text(
                   value,
                   style: TextStyle(
-                    color: _textMain,
+                    color: Color(0xFFF5F0E8),
                     fontSize: 13,
                     fontFamily: 'Georgia',
                     fontWeight: FontWeight.w600,
@@ -76,7 +77,7 @@ class ProfileInfo extends StatelessWidget {
               ],
             ),
           ),
-          Icon(Icons.chevron_right, color: _textSub, size: 18),
+          Icon(Icons.chevron_right, color: Color(0xFF888070), size: 18),
         ],
       ),
     );

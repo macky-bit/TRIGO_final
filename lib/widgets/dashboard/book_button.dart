@@ -41,15 +41,12 @@ class _BookButtonState extends State<BookButton>
           width: double.infinity,
           height: 60,
           decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [Color(0xFF43A047), Color(0xFF2E7D32)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
+            color: Color(0xFF1A1A1A),
             borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: Color(0xFFB87333), width: 1.5),
             boxShadow: [
               BoxShadow(
-                color: Color(0xFF4CAF50).withValues(alpha: 0.35),
+                color: Color(0xFFB87333).withValues(alpha: 0.2),
                 blurRadius: 16,
                 offset: const Offset(0, 6),
               ),
@@ -59,11 +56,11 @@ class _BookButtonState extends State<BookButton>
             child: Text(
               'BOOK A TRICYCLE',
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
+                color: Color(0xFFB87333),
+                fontSize: 15,
                 fontFamily: 'Courier New',
                 fontWeight: FontWeight.w800,
-                letterSpacing: 3,
+                letterSpacing: 4,
               ),
             ),
           ),
