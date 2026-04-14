@@ -5,8 +5,6 @@ class ProfileInfo extends StatelessWidget {
 
   static const Color _cardBg  = Color(0xFF252525);
   static const Color _accent  = Color(0xFFB87333);
-  static const Color _cream   = Color(0xFFF5F0E8);
-  static const Color _label   = Color(0xFF888070);
   static const Color _divider = Color(0xFF2E2A24);
 
   @override

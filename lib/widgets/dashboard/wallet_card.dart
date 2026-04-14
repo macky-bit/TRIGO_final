@@ -6,7 +6,6 @@ class WalletCard extends StatelessWidget {
   static const Color _cardBg = Color(0xFF252525);
   static const Color _accent = Color(0xFFB87333);
   static const Color _cream  = Color(0xFFF5F0E8);
-  static const Color _label  = Color(0xFF888070);
 
   @override
   Widget build(BuildContext context) {
