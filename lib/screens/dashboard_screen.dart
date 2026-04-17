@@ -7,6 +7,7 @@ import '../widgets/dashboard/map_preview.dart';
 import '../widgets/dashboard/recent_trips.dart';
 import '../widgets/dashboard/bottom_nav.dart';
 import '../screens/profile_screen.dart';
+import '../screens/tourism_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -21,7 +22,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF111C1D),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -48,6 +49,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
         currentIndex: _currentNavIndex,
         onTap: (i) {
           setState(() => _currentNavIndex = i);
+          if (i == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => TourismScreen()),
+            );
+          }
           if (i == 3) {
             Navigator.push(
               context,

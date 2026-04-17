@@ -20,7 +20,7 @@ class BottomNav extends StatelessWidget {
       decoration: BoxDecoration(
         color: _bg,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-        border: Border(top: BorderSide(color: Color(0xFF2E2A24), width: 1)),
+        border: Border(top: BorderSide(color: Color(0xFF1F3538), width: 1)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.4),
@@ -35,10 +35,10 @@ class BottomNav extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _navItem(0, Icons.home_rounded,              'Home'),
-              _navItem(1, Icons.electric_rickshaw,         'Bookings'),
+              _navItem(0, Icons.home_rounded,                'Home'),
+              _navItem(1, Icons.electric_rickshaw,           'Tourism'),
               _navItem(2, Icons.chat_bubble_outline_rounded, 'Messages'),
-              _navItem(3, Icons.person_outline_rounded,    'Profile'),
+              _navItem(3, Icons.person_outline_rounded,      'Profile'),
             ],
           ),
         ),

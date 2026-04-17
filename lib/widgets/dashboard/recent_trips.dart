@@ -10,8 +10,8 @@ class RecentTrips extends StatelessWidget {
   static const Color _divider = Color(0xFF1F3538);
 
   final List<Map<String, String>> _trips = const [
-    {'title': 'Ride to SM Baguio',    'subtitle': 'Today - ₱80.00'},
-    {'title': 'Ride to Burnham Park', 'subtitle': 'Yesterday - ₱70.00'},
+    {'title': 'Ride to SM La Union',    'subtitle': 'Today - ₱80.00'},
+    {'title': 'Ride to San Fernando Town', 'subtitle': 'Yesterday - ₱70.00'},
   ];
 
   @override

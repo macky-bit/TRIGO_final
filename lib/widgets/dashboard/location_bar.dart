@@ -45,7 +45,7 @@ class LocationBar extends StatelessWidget {
                 ),
                 const SizedBox(height: 3),
                 Text(
-                  'Baguio City, Session Road',
+                  'San Fernando City, La Union ',
                   style: TextStyle(
                     color: _cream,
                     fontSize: 14,
