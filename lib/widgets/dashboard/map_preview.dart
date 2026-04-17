@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class MapPreview extends StatelessWidget {
   const MapPreview({super.key});
 
-  static const Color _cardBg = Color(0xFF252525);
-  static const Color _accent = Color(0xFFB87333);
-  static const Color _road   = Color(0xFFCCC5B5);
-  static const Color _mapBg  = Color(0xFF2E2A24);
-  static const Color _block  = Color(0xFF333028);
+  static const Color _cardBg = Color(0xFF182628);
+  static const Color _accent = Color(0xFFF5A623);
+  static const Color _road   = Color(0xFF2A7F8A);  // teal roads
+  static const Color _mapBg  = Color(0xFF111C1D);
+  static const Color _block  = Color(0xFF1F3538);
 
   @override
   Widget build(BuildContext context) {

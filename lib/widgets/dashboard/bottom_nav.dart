@@ -10,9 +10,9 @@ class BottomNav extends StatelessWidget {
     required this.onTap,
   });
 
-  static const Color _bg      = Color(0xFF1A1A1A);
-  static const Color _accent  = Color(0xFFB87333);
-  static const Color _inactive = Color(0xFF888070);
+  static const Color _bg       = Color(0xFF111C1D);
+  static const Color _accent   = Color(0xFFF5A623);
+  static const Color _inactive = Color(0xFF7AABB0);
 
   @override
   Widget build(BuildContext context) {

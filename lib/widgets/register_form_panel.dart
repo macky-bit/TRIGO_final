@@ -39,12 +39,20 @@ class _RegisterFormPanelState extends State<RegisterFormPanel> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Logo
+          Center(
+            child: Image.asset(
+              'assets/images/TriGo.png',
+              height: 120,
+            ),
+          ),
+          const SizedBox(height: 32),
+
           Text('GET STARTED', style: AppTheme.welcomeLabel),
           const SizedBox(height: 10),
           Text('Create your\naccount', style: AppTheme.heading),
           const SizedBox(height: 36),
 
-          // First Name + Last Name row
           Row(
             children: [
               Expanded(
@@ -54,9 +62,7 @@ class _RegisterFormPanelState extends State<RegisterFormPanel> {
                     Text('FIRST NAME', style: AppTheme.fieldLabel),
                     const SizedBox(height: 8),
                     _buildTextField(
-                      controller: _firstNameController,
-                      hint: 'Jane',
-                    ),
+                        controller: _firstNameController, hint: 'Jane'),
                   ],
                 ),
               ),
@@ -68,9 +74,7 @@ class _RegisterFormPanelState extends State<RegisterFormPanel> {
                     Text('LAST NAME', style: AppTheme.fieldLabel),
                     const SizedBox(height: 8),
                     _buildTextField(
-                      controller: _lastNameController,
-                      hint: 'Doe',
-                    ),
+                        controller: _lastNameController, hint: 'Doe'),
                   ],
                 ),
               ),
@@ -78,7 +82,6 @@ class _RegisterFormPanelState extends State<RegisterFormPanel> {
           ),
           const SizedBox(height: 22),
 
-          // Email
           Text('EMAIL ADDRESS', style: AppTheme.fieldLabel),
           const SizedBox(height: 8),
           _buildTextField(
@@ -88,7 +91,6 @@ class _RegisterFormPanelState extends State<RegisterFormPanel> {
           ),
           const SizedBox(height: 22),
 
-          // Password
           Text('PASSWORD', style: AppTheme.fieldLabel),
           const SizedBox(height: 8),
           _buildTextField(
@@ -96,11 +98,11 @@ class _RegisterFormPanelState extends State<RegisterFormPanel> {
             hint: 'Min. 8 characters',
             isPassword: true,
             obscure: _obscurePassword,
-            onToggle: () => setState(() => _obscurePassword = !_obscurePassword),
+            onToggle: () =>
+                setState(() => _obscurePassword = !_obscurePassword),
           ),
           const SizedBox(height: 22),
 
-          // Confirm Password
           Text('CONFIRM PASSWORD', style: AppTheme.fieldLabel),
           const SizedBox(height: 8),
           _buildTextField(
@@ -112,7 +114,6 @@ class _RegisterFormPanelState extends State<RegisterFormPanel> {
           ),
           const SizedBox(height: 24),
 
-          // Terms and Privacy
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -121,7 +122,8 @@ class _RegisterFormPanelState extends State<RegisterFormPanel> {
                 height: 18,
                 child: Checkbox(
                   value: _agreedToTerms,
-                  onChanged: (v) => setState(() => _agreedToTerms = v ?? false),
+                  onChanged: (v) =>
+                      setState(() => _agreedToTerms = v ?? false),
                   activeColor: AppTheme.darkBg,
                   side: const BorderSide(color: AppTheme.border, width: 1.5),
                   shape: RoundedRectangleBorder(
@@ -171,7 +173,6 @@ class _RegisterFormPanelState extends State<RegisterFormPanel> {
           CreateAccountButton(onPressed: _handleRegister),
           const SizedBox(height: 28),
 
-          // Sign in link
           Center(
             child: GestureDetector(
               onTap: () => Navigator.pop(context),
@@ -211,9 +212,7 @@ class _RegisterFormPanelState extends State<RegisterFormPanel> {
       style: AppTheme.fieldInput,
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: AppTheme.fieldInput.copyWith(
-          color: Color(0x4D1A1A1A),
-        ),
+        hintStyle: AppTheme.fieldInput.copyWith(color: Color(0x4D1A1A1A)),
         suffixIcon: isPassword
             ? GestureDetector(
                 onTap: onToggle,
@@ -239,7 +238,6 @@ class _RegisterFormPanelState extends State<RegisterFormPanel> {
   }
 
   void _handleRegister() {
-    // TODO: wire up Firebase registration
     debugPrint('First Name: ${_firstNameController.text}');
     debugPrint('Last Name: ${_lastNameController.text}');
     debugPrint('Email: ${_emailController.text}');

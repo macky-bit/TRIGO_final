@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../screens/register_screen.dart';
-import 'continue_button.dart';
 import '../screens/dashboard_screen.dart';
+import 'continue_button.dart';
 
 class FormPanel extends StatefulWidget {
   const FormPanel({super.key});
@@ -10,7 +10,6 @@ class FormPanel extends StatefulWidget {
   @override
   State<FormPanel> createState() => _FormPanelState();
 }
-
 
 class _FormPanelState extends State<FormPanel> {
   final _emailController    = TextEditingController();
@@ -34,10 +33,20 @@ class _FormPanelState extends State<FormPanel> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Logo
+          Center(
+            child: Image.asset(
+              'assets/images/TriGo.png',
+              height: 120,
+            ),
+          ),
+          const SizedBox(height: 32),
+
           Text('WELCOME BACK', style: AppTheme.welcomeLabel),
           const SizedBox(height: 10),
           Text('Sign in to\nyour account', style: AppTheme.heading),
           const SizedBox(height: 36),
+
           Text('EMAIL ADDRESS', style: AppTheme.fieldLabel),
           const SizedBox(height: 8),
           _buildTextField(
@@ -46,6 +55,7 @@ class _FormPanelState extends State<FormPanel> {
             keyboardType: TextInputType.emailAddress,
           ),
           const SizedBox(height: 22),
+
           Text('PASSWORD', style: AppTheme.fieldLabel),
           const SizedBox(height: 8),
           _buildTextField(
@@ -54,6 +64,7 @@ class _FormPanelState extends State<FormPanel> {
             isPassword: true,
           ),
           const SizedBox(height: 20),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -89,13 +100,14 @@ class _FormPanelState extends State<FormPanel> {
                     decorationColor: Color(0x661A1A1A),
                   ),
                 ),
-              
               ),
             ],
           ),
           const SizedBox(height: 28),
+
           ContinueButton(onPressed: _handleLogin),
           const SizedBox(height: 28),
+
           Row(
             children: [
               const Expanded(child: Divider(color: AppTheme.border, thickness: 1)),
@@ -107,17 +119,24 @@ class _FormPanelState extends State<FormPanel> {
             ],
           ),
           const SizedBox(height: 24),
+
           Center(
             child: GestureDetector(
               onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => RegisterScreen()),
-            ),
-            child: RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(text: "Don't have an account?  ", style: AppTheme.createAccount),
-                  TextSpan(text: 'Create one', style: AppTheme.createAccountLink),
+                context,
+                MaterialPageRoute(builder: (_) => RegisterScreen()),
+              ),
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Don't have an account?  ",
+                      style: AppTheme.createAccount,
+                    ),
+                    TextSpan(
+                      text: 'Create one',
+                      style: AppTheme.createAccountLink,
+                    ),
                   ],
                 ),
               ),
@@ -127,7 +146,7 @@ class _FormPanelState extends State<FormPanel> {
       ),
     );
   }
-  
+
   Widget _buildTextField({
     required TextEditingController controller,
     required String hint,
@@ -144,9 +163,12 @@ class _FormPanelState extends State<FormPanel> {
         hintStyle: AppTheme.fieldInput.copyWith(color: Color(0x4D1A1A1A)),
         suffixIcon: isPassword
             ? GestureDetector(
-                onTap: () => setState(() => _obscurePassword = !_obscurePassword),
+                onTap: () =>
+                    setState(() => _obscurePassword = !_obscurePassword),
                 child: Icon(
-                  _obscurePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,
+                  _obscurePassword
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
                   color: AppTheme.label,
                   size: 18,
                 ),
@@ -165,9 +187,9 @@ class _FormPanelState extends State<FormPanel> {
   }
 
   void _handleLogin() {
-  Navigator.pushReplacement(
-    context,
-    MaterialPageRoute(builder: (_) => DashboardScreen()),
-  );
-}
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (_) => DashboardScreen()),
+    );
+  }
 }

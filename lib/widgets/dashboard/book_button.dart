@@ -43,10 +43,10 @@ class _BookButtonState extends State<BookButton>
           decoration: BoxDecoration(
             color: Color(0xFF1A1A1A),
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Color(0xFFB87333), width: 1.5),
+            border: Border.all(color: Color(0xFF2A7F8A), width: 1.5),
             boxShadow: [
               BoxShadow(
-                color: Color(0xFFB87333).withValues(alpha: 0.2),
+                color: Color(0xFF2A7F8A).withValues(alpha: 0.2),
                 blurRadius: 16,
                 offset: const Offset(0, 6),
               ),

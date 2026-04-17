@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 class WalletCard extends StatelessWidget {
   const WalletCard({super.key});
 
-  static const Color _cardBg = Color(0xFF252525);
-  static const Color _accent = Color(0xFFB87333);
-  static const Color _cream  = Color(0xFFF5F0E8);
+  static const Color _cardBg  = Color(0xFF182628);
+  static const Color _accent  = Color(0xFFF5A623);
+  static const Color _cream   = Color(0xFFF5F0E8);  // keep same
+
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class WalletCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: _cardBg,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Color(0xFF2E2A24), width: 1),
+        border: Border.all(color: Color(0xFF1F3538), width: 1),
       ),
       child: Row(
         children: [

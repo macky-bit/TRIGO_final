@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 class QuickActions extends StatelessWidget {
   const QuickActions({super.key});
 
-  static const Color _cardBg = Color(0xFF252525);
-  static const Color _accent = Color(0xFFB87333);
-  static const Color _cream  = Color(0xFFF5F0E8);
+  static const Color _cardBg  = Color(0xFF182628);
+  static const Color _accent  = Color(0xFFF5A623);
+  static const Color _cream   = Color(0xFFF5F0E8);  // keep same
+  
 
   @override
   Widget build(BuildContext context) {

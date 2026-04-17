@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   // Colors
-  static const Color darkBg   = Color(0xFF1A1A1A);
-  static const Color cream    = Color(0xFFF5F0E8);
-  static const Color accent   = Color(0xFFB87333); // copper/bronze
-  static const Color border   = Color(0xFFCCC5B5);
-  static const Color label    = Color(0xFF888070);
+  static const Color darkBg  = Color(0xFF111C1D);
+  static const Color cream   = Color(0xFFF5F0E8);
+  static const Color accent  = Color(0xFFF5A623);
+  static const Color border  = Color(0xFF1F3538);
+  static const Color label   = Color(0xFF7AABB0);
 
   // Text Styles
   static const TextStyle philLabel = TextStyle(

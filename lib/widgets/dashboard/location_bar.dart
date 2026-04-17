@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class LocationBar extends StatelessWidget {
   const LocationBar({super.key});
 
-  static const Color _cardBg  = Color(0xFF252525);
-  static const Color _accent  = Color(0xFFB87333);
-  static const Color _cream   = Color(0xFFF5F0E8);
-  static const Color _label   = Color(0xFF888070);
+  static const Color _cardBg  = Color(0xFF182628);
+  static const Color _accent  = Color(0xFFF5A623);
+  static const Color _cream   = Color(0xFFF5F0E8);  // keep same
+  static const Color _label   = Color(0xFF7AABB0);
 
   @override
   Widget build(BuildContext context) {

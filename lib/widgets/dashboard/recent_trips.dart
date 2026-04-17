@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class RecentTrips extends StatelessWidget {
   const RecentTrips({super.key});
 
-  static const Color _cardBg  = Color(0xFF252525);
-  static const Color _accent  = Color(0xFFB87333);
-  static const Color _cream   = Color(0xFFF5F0E8);
-  static const Color _label   = Color(0xFF888070);
-  static const Color _divider = Color(0xFF2E2A24);
+  static const Color _cardBg  = Color(0xFF182628);
+  static const Color _accent  = Color(0xFFF5A623);
+  static const Color _cream   = Color(0xFFF5F0E8);  // keep same
+  static const Color _label   = Color(0xFF7AABB0);
+  static const Color _divider = Color(0xFF1F3538);
 
   final List<Map<String, String>> _trips = const [
     {'title': 'Ride to SM Baguio',    'subtitle': 'Today - ₱80.00'},
