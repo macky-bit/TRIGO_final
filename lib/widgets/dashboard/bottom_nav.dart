@@ -10,9 +10,9 @@ class BottomNav extends StatelessWidget {
     required this.onTap,
   });
 
-  static const Color _bg       = Color(0xFF111C1D);
-  static const Color _accent   = Color(0xFFF5A623);
-  static const Color _inactive = Color(0xFF7AABB0);
+  static const Color _bg      = Color(0xFFFFFFFF);
+  static const Color _accent  = Color(0xFF90EE90);
+  static const Color _inactive = Color(0xFFCCC5B5);
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,10 @@ class BottomNav extends StatelessWidget {
       decoration: BoxDecoration(
         color: _bg,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-        border: Border(top: BorderSide(color: Color(0xFF1F3538), width: 1)),
+        border: Border(top: BorderSide(color: Color(0xFFECE8E0), width: 1)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.4),
+            color: Colors.black.withValues(alpha: 0.08),
             blurRadius: 12,
             offset: const Offset(0, -4),
           ),

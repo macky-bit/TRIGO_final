@@ -18,7 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFFF5F0E8),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -39,9 +39,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       bottomNavigationBar: BottomNav(
         currentIndex: _currentNavIndex,
         onTap: (i) {
-          if (i != 3) {
-            Navigator.pop(context);
-          }
+          if (i != 3) Navigator.pop(context);
           setState(() => _currentNavIndex = i);
         },
       ),

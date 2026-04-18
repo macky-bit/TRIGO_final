@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
-import '../screens/login_screen.dart';
 import 'create_account_button.dart';
 
 class RegisterFormPanel extends StatefulWidget {

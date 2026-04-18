@@ -33,15 +33,14 @@ class _LogoutButtonState extends State<LogoutButton>
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
-        backgroundColor: const Color(0xFF252525),
+        backgroundColor: const Color(0xFFF5F0E8),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          side: BorderSide(color: Color(0xFF2E2A24), width: 1),
         ),
         title: const Text(
           'Log Out',
           style: TextStyle(
-            color: Color(0xFFF5F0E8),
+            color: Color(0xFF1A1A1A),
             fontFamily: 'Georgia',
             fontWeight: FontWeight.w700,
           ),
@@ -103,22 +102,23 @@ class _LogoutButtonState extends State<LogoutButton>
           width: double.infinity,
           height: 52,
           decoration: BoxDecoration(
-            color: const Color(0xFF1A1A1A),
+            color: const Color(0xFFFFF0F0),
             borderRadius: BorderRadius.circular(14),
             border: Border.all(
-              color: const Color(0xFFB87333).withValues(alpha: 0.5),
+              color: const Color(0xFFE53935).withValues(alpha: 0.3),
               width: 1.2,
             ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
-              Icon(Icons.logout_rounded, color: Color(0xFFB87333), size: 18),
+              Icon(Icons.logout_rounded,
+                  color: Color(0xFFE53935), size: 18),
               SizedBox(width: 10),
               Text(
                 'LOG OUT',
                 style: TextStyle(
-                  color: Color(0xFFB87333),
+                  color: Color(0xFFE53935),
                   fontSize: 12,
                   fontFamily: 'Courier New',
                   fontWeight: FontWeight.w700,

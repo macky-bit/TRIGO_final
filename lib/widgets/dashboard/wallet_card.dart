@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 class WalletCard extends StatelessWidget {
   const WalletCard({super.key});
 
-  static const Color _cardBg  = Color(0xFF182628);
-  static const Color _accent  = Color(0xFFF5A623);
-  static const Color _cream   = Color(0xFFF5F0E8);  // keep same
-
+  static const Color _cardBg = Color(0xFFFFFFFF);
+  static const Color _accent = Color(0xFF90EE90);
+  static const Color _dark   = Color(0xFF1A1A1A);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,13 @@ class WalletCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: _cardBg,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Color(0xFF1F3538), width: 1),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.06),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
       ),
       child: Row(
         children: [
@@ -26,7 +31,7 @@ class WalletCard extends StatelessWidget {
                 Text(
                   'WALLET BALANCE',
                   style: TextStyle(
-                    color: _accent,
+                    color: _dark,
                     fontSize: 10,
                     fontFamily: 'Courier New',
                     letterSpacing: 2,
@@ -37,7 +42,7 @@ class WalletCard extends StatelessWidget {
                 Text(
                   '₱250.00',
                   style: TextStyle(
-                    color: _cream,
+                    color: _dark,
                     fontSize: 28,
                     fontFamily: 'Georgia',
                     fontWeight: FontWeight.w700,
@@ -57,7 +62,7 @@ class WalletCard extends StatelessWidget {
               child: Text(
                 'Add Funds',
                 style: TextStyle(
-                  color: Color(0xFF1A1A1A),
+                  color: Colors.white,
                   fontSize: 12,
                   fontFamily: 'Courier New',
                   fontWeight: FontWeight.w700,

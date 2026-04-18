@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class LocationBar extends StatelessWidget {
   const LocationBar({super.key});
 
-  static const Color _cardBg  = Color(0xFF182628);
-  static const Color _accent  = Color(0xFFF5A623);
-  static const Color _cream   = Color(0xFFF5F0E8);  // keep same
-  static const Color _label   = Color(0xFF7AABB0);
+  static const Color _cardBg = Color(0xFFFFFFFF);
+  static const Color _accent = Color(0xFF90EE90);
+  static const Color _dark   = Color(0xFF1A1A1A);
+  static const Color _label  = Color(0xFF888070);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,13 @@ class LocationBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: _cardBg,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Color(0xFF2E2A24), width: 1),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.06),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
       ),
       child: Row(
         children: [
@@ -23,7 +29,7 @@ class LocationBar extends StatelessWidget {
             width: 42,
             height: 42,
             decoration: BoxDecoration(
-              color: _accent.withValues(alpha: 0.15),
+              color: _accent.withValues(alpha: 0.12),
               shape: BoxShape.circle,
             ),
             child: const Icon(Icons.location_on, color: _accent, size: 22),
@@ -36,7 +42,7 @@ class LocationBar extends StatelessWidget {
                 Text(
                   'CURRENT LOCATION',
                   style: TextStyle(
-                    color: _accent,
+                    color: _dark,
                     fontSize: 10,
                     fontFamily: 'Courier New',
                     letterSpacing: 2,
@@ -45,9 +51,9 @@ class LocationBar extends StatelessWidget {
                 ),
                 const SizedBox(height: 3),
                 Text(
-                  'San Fernando City, La Union ',
+                  'San Fernando City, La Union',
                   style: TextStyle(
-                    color: _cream,
+                    color: _dark,
                     fontSize: 14,
                     fontFamily: 'Georgia',
                     fontWeight: FontWeight.w700,
@@ -61,13 +67,13 @@ class LocationBar extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
               decoration: BoxDecoration(
-                border: Border.all(color: _label.withValues(alpha: 0.5)),
+                border: Border.all(color: _label.withValues(alpha: 0.4)),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
                 'Change',
                 style: TextStyle(
-                  color: _cream,
+                  color: _dark,
                   fontSize: 11,
                   fontFamily: 'Courier New',
                   letterSpacing: 1,

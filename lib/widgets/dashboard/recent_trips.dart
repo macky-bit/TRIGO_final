@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class RecentTrips extends StatelessWidget {
   const RecentTrips({super.key});
 
-  static const Color _cardBg  = Color(0xFF182628);
-  static const Color _accent  = Color(0xFFF5A623);
-  static const Color _cream   = Color(0xFFF5F0E8);  // keep same
-  static const Color _label   = Color(0xFF7AABB0);
-  static const Color _divider = Color(0xFF1F3538);
+  static const Color _cardBg  = Color(0xFFFFFFFF);
+  static const Color _accent  = Color(0xFF90EE90);
+  static const Color _dark    = Color(0xFF1A1A1A);
+  static const Color _label   = Color(0xFF888070);
+  static const Color _divider = Color(0xFFECE8E0);
 
   final List<Map<String, String>> _trips = const [
-    {'title': 'Ride to SM La Union',    'subtitle': 'Today - ₱80.00'},
+    {'title': 'Ride to SM San Fernando',    'subtitle': 'Today - ₱80.00'},
     {'title': 'Ride to San Fernando Town', 'subtitle': 'Yesterday - ₱70.00'},
   ];
 
@@ -22,7 +22,7 @@ class RecentTrips extends StatelessWidget {
         Text(
           'Recent Trips',
           style: TextStyle(
-            color: _cream,
+            color: _dark,
             fontSize: 17,
             fontFamily: 'Georgia',
             fontWeight: FontWeight.w700,
@@ -33,7 +33,13 @@ class RecentTrips extends StatelessWidget {
           decoration: BoxDecoration(
             color: _cardBg,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: _divider, width: 1),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.06),
+                blurRadius: 10,
+                offset: const Offset(0, 2),
+              ),
+            ],
           ),
           child: Column(
             children: List.generate(_trips.length, (i) {
@@ -51,7 +57,7 @@ class RecentTrips extends StatelessWidget {
                             width: 38,
                             height: 38,
                             decoration: BoxDecoration(
-                              color: _accent.withValues(alpha: 0.12),
+                              color: _accent.withValues(alpha: 0.10),
                               shape: BoxShape.circle,
                             ),
                             child: Icon(
@@ -68,7 +74,7 @@ class RecentTrips extends StatelessWidget {
                                 Text(
                                   trip['title']!,
                                   style: TextStyle(
-                                    color: _cream,
+                                    color: _dark,
                                     fontSize: 13,
                                     fontFamily: 'Georgia',
                                     fontWeight: FontWeight.w700,

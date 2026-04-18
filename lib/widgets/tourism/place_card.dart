@@ -11,24 +11,35 @@ class PlaceCard extends StatelessWidget {
       onTap: () {},
       child: Container(
         decoration: BoxDecoration(
-          color: const Color(0xFF182628),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: const Color(0xFF1F3538), width: 1),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.07),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
         ),
         clipBehavior: Clip.hardEdge,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Image area — replace Container with Image.asset() later
             Expanded(
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  // TODO: Replace with:
-                  // Image.asset('assets/images/places/${place['image']}',
-                  //   fit: BoxFit.cover)
-                  Container(color: place['color'] as Color),
-
+                  Image.asset(
+                    'assets/images/places/${place['image']}',
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                  errorBuilder: (context, error, stackTrace) => Container(
+                    color: const Color(0xFFCCC5B5),
+                    child: const Icon(Icons.image_outlined,
+                      color: Color(0xFF888070), size: 24),
+                  ),
+                ),
+                
                   // Rating badge
                   Positioned(
                     bottom: 6,
@@ -37,26 +48,22 @@ class PlaceCard extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 6, vertical: 3),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF111C1D).withValues(alpha: 0.85),
+                        color: const Color(0xFF1A1A1A).withValues(alpha: 0.80),
                         borderRadius: BorderRadius.circular(6),
-                        border: Border.all(
-                          color: const Color(0xFFF5A623).withValues(alpha: 0.5),
-                          width: 0.8,
-                        ),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           const Icon(
                             Icons.location_on,
-                            color: Color(0xFFF5A623),
+                            color: Color(0xFFB87333),
                             size: 9,
                           ),
                           const SizedBox(width: 2),
                           Text(
                             place['rating'] as String,
                             style: const TextStyle(
-                              color: Color(0xFFF5A623),
+                              color: Color(0xFFB87333),
                               fontSize: 9,
                               fontFamily: 'Courier New',
                               fontWeight: FontWeight.w700,
@@ -70,7 +77,6 @@ class PlaceCard extends StatelessWidget {
               ),
             ),
 
-            // Info area
             Padding(
               padding: const EdgeInsets.fromLTRB(8, 7, 8, 8),
               child: Column(
@@ -79,7 +85,7 @@ class PlaceCard extends StatelessWidget {
                   Text(
                     place['name'] as String,
                     style: const TextStyle(
-                      color: Color(0xFFF5F0E8),
+                      color: Color(0xFF1A1A1A),
                       fontSize: 11,
                       fontFamily: 'Georgia',
                       fontWeight: FontWeight.w700,
@@ -93,7 +99,7 @@ class PlaceCard extends StatelessWidget {
                     children: [
                       const Icon(
                         Icons.location_on_outlined,
-                        color: Color(0xFF7AABB0),
+                        color: Color(0xFF888070),
                         size: 9,
                       ),
                       const SizedBox(width: 2),
@@ -101,7 +107,7 @@ class PlaceCard extends StatelessWidget {
                         child: Text(
                           place['location'] as String,
                           style: const TextStyle(
-                            color: Color(0xFF7AABB0),
+                            color: Color(0xFF888070),
                             fontSize: 9,
                             fontFamily: 'Courier New',
                           ),

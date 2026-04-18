@@ -3,24 +3,29 @@ import 'package:flutter/material.dart';
 class MapPreview extends StatelessWidget {
   const MapPreview({super.key});
 
-  static const Color _cardBg = Color(0xFF182628);
-  static const Color _accent = Color(0xFFF5A623);
-  static const Color _road   = Color(0xFF2A7F8A);  // teal roads
-  static const Color _mapBg  = Color(0xFF111C1D);
-  static const Color _block  = Color(0xFF1F3538);
-
+  static const Color _mapBg  = Color(0xFFE8F5E9); 
+  static const Color _road   = Color(0xFFFFFFFF);  
+  static const Color _block  = Color(0xFFC8E6C9);  
+  static const Color _accent = Color(0xFF90EE90);  
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 180,
       decoration: BoxDecoration(
-        color: _cardBg,
+        color: _mapBg,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Color(0xFF2E2A24), width: 1),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.06),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
       ),
       clipBehavior: Clip.hardEdge,
       child: Stack(
         children: [
+          // Map background
           Container(color: _mapBg),
 
           // Road horizontal
@@ -28,7 +33,7 @@ class MapPreview extends StatelessWidget {
             top: 70,
             left: 0,
             right: 0,
-            child: Container(height: 36, color: _road.withValues(alpha: 0.3)),
+            child: Container(height: 36, color: _road),
           ),
 
           // Road vertical
@@ -36,7 +41,7 @@ class MapPreview extends StatelessWidget {
             top: 0,
             bottom: 0,
             left: 160,
-            child: Container(width: 28, color: _road.withValues(alpha: 0.3)),
+            child: Container(width: 28, color: _road),
           ),
 
           // City blocks
@@ -69,7 +74,7 @@ class MapPreview extends StatelessWidget {
                   ),
                   child: const Icon(
                     Icons.location_on,
-                    color: Color(0xFF1A1A1A),
+                    color: Colors.white,
                     size: 18,
                   ),
                 ),
@@ -110,12 +115,11 @@ class MapPreview extends StatelessWidget {
         width: 36,
         height: 28,
         decoration: BoxDecoration(
-          color: Color(0xFF1A1A1A),
+          color: Color(0xFF2E7D32),
           borderRadius: BorderRadius.circular(6),
-          border: Border.all(color: Color(0xFFB87333), width: 1),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.3),
+              color: Colors.black.withValues(alpha: 0.15),
               blurRadius: 4,
               offset: const Offset(1, 2),
             ),

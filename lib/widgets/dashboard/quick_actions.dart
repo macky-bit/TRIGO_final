@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 class QuickActions extends StatelessWidget {
   const QuickActions({super.key});
 
-  static const Color _cardBg  = Color(0xFF182628);
-  static const Color _accent  = Color(0xFFF5A623);
-  static const Color _cream   = Color(0xFFF5F0E8);  // keep same
-  
+  static const Color _cardBg = Color(0xFFFFFFFF);
+  static const Color _accent = Color(0xFF90EE90);
+  static const Color _dark   = Color(0xFF1A1A1A);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,13 @@ class QuickActions extends StatelessWidget {
           decoration: BoxDecoration(
             color: _cardBg,
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: Color(0xFF2E2A24), width: 1),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.06),
+                blurRadius: 8,
+                offset: const Offset(0, 2),
+              ),
+            ],
           ),
           child: Column(
             children: [
@@ -39,7 +44,7 @@ class QuickActions extends StatelessWidget {
               Text(
                 label,
                 style: TextStyle(
-                  color: _cream,
+                  color: _dark,
                   fontSize: 11,
                   fontFamily: 'Courier New',
                   letterSpacing: 0.5,

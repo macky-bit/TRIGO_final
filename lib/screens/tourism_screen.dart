@@ -17,32 +17,28 @@ class _TourismScreenState extends State<TourismScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF111C1D),
+      backgroundColor: const Color(0xFFF5F0E8),
       body: SafeArea(
         child: Column(
           children: [
-            // Search bar at top
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
               child: TourismSearch(),
             ),
             const SizedBox(height: 16),
-
-            // Scrollable content
             Expanded(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 80),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Header row
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           'Popular Places\nin La Union',
                           style: TextStyle(
-                            color: Color(0xFFF5F0E8),
+                            color: Color(0xFF1A1A1A),
                             fontSize: 22,
                             fontFamily: 'Georgia',
                             fontWeight: FontWeight.w700,
@@ -56,25 +52,21 @@ class _TourismScreenState extends State<TourismScreen> {
                               Text(
                                 'See All',
                                 style: TextStyle(
-                                  color: Color(0xFFF5A623),
+                                  color: Color(0xFF1A1A1A),
                                   fontSize: 13,
                                   fontFamily: 'Georgia',
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               const SizedBox(width: 4),
-                              Icon(
-                                Icons.chevron_right,
-                                color: Color(0xFFF5A623),
-                                size: 18,
-                              ),
+                              Icon(Icons.chevron_right,
+                                  color: Color(0xFFB87333), size: 18),
                             ],
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 16),
-
                     TourismGrid(),
                   ],
                 ),
