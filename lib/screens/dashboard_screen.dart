@@ -8,6 +8,7 @@ import '../widgets/dashboard/recent_trips.dart';
 import '../widgets/dashboard/bottom_nav.dart';
 import '../screens/profile_screen.dart';
 import '../screens/tourism_screen.dart';
+import '../screens/maintenance_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -59,6 +60,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (_) => ProfileScreen()),
+            );
+          }
+          if (i == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => MaintenanceScreen(
+                featureName: 'History'
+              )),
             );
           }
         },

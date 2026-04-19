@@ -45,6 +45,7 @@ class ProfileInfo extends StatelessWidget {
           _infoRow(Icons.cake_outlined,        'BIRTHDAY', 'March 21, 2006'),
         ],
       ),
+      
     );
   }
 

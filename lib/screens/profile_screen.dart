@@ -4,6 +4,9 @@ import '../widgets/profile/profile_header.dart';
 import '../widgets/profile/profile_info.dart';
 import '../widgets/profile/profile_menu.dart';
 import '../widgets/profile/logout_button.dart';
+import '../screens/tourism_screen.dart';
+import '../screens/maintenance_screen.dart';
+import '../screens/dashboard_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -39,8 +42,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
       bottomNavigationBar: BottomNav(
         currentIndex: _currentNavIndex,
         onTap: (i) {
-          if (i != 3) Navigator.pop(context);
           setState(() => _currentNavIndex = i);
+          if (i == 0) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => DashboardScreen()),
+            );
+          }
+          if (i == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => TourismScreen()),
+            );
+          }
+          if (i == 3) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => ProfileScreen()),
+            );
+          }
+          if (i == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => MaintenanceScreen(
+                featureName: 'Messages'
+              )),
+            );
+          }
         },
       ),
     );

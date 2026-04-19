@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/screens/dashboard_screen.dart';
 import '../widgets/dashboard/bottom_nav.dart';
 import '../widgets/tourism/tourism_search.dart';
 import '../widgets/tourism/tourism_grid.dart';
 import '../screens/profile_screen.dart';
+import '../screens/maintenance_screen.dart';
 
 class TourismScreen extends StatefulWidget {
   const TourismScreen({super.key});
@@ -79,11 +81,30 @@ class _TourismScreenState extends State<TourismScreen> {
         currentIndex: _currentNavIndex,
         onTap: (i) {
           setState(() => _currentNavIndex = i);
-          if (i == 0) Navigator.pop(context);
+          if (i == 0) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => DashboardScreen()),
+            );
+          }
+          if (i == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => TourismScreen()),
+            );
+          }
           if (i == 3) {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (_) => ProfileScreen()),
+            );
+          }
+          if (i == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => MaintenanceScreen(
+                featureName: 'History'
+              )),
             );
           }
         },
